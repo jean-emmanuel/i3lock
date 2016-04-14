@@ -51,7 +51,7 @@ char wrongcolor[7] = "ff0000"; // wrong
 char idlecolor[7] = "000000"; // idle
 
 /* Time format */
-bool use24hour = true;
+bool use24hour = false;
 
 int inactivity_timeout = 30;
 uint32_t last_resolution[2];
