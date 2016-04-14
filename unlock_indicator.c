@@ -225,7 +225,6 @@ xcb_pixmap_t draw_image(uint32_t *resolution) {
         }
 
         set_pam_color('f');
-        cairo_fill_preserve(ctx);
 
         /* Circle border */
         set_pam_color('l');
@@ -281,26 +280,7 @@ xcb_pixmap_t draw_image(uint32_t *resolution) {
             cairo_set_operator(ctx,CAIRO_OPERATOR_OVER); 
             cairo_set_line_width(ctx, 10);
 
-            /* Change color of separators based on backspace/active keypress */
-            set_pam_color('l');
 
-            /* Separator 1 */
-            cairo_arc(ctx,
-                BUTTON_CENTER /* x */,
-                BUTTON_CENTER /* y */,
-                BUTTON_RADIUS /* radius */,
-                highlight_start /* start */,
-                highlight_start + (M_PI / 128.0) /* end */);
-            cairo_stroke(ctx);
-
-            /* Separator 2 */
-            cairo_arc(ctx,
-                BUTTON_CENTER /* x */,
-                BUTTON_CENTER /* y */,
-                BUTTON_RADIUS /* radius */,
-                highlight_start + (M_PI / 2.5) /* start */,
-                (highlight_start + (M_PI / 2.5)) + (M_PI / 128.0) /* end */);
-            cairo_stroke(ctx);
         }
     }
 
